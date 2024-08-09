@@ -31,8 +31,8 @@ def check_progress_bar(command: str, progress_bar_expected: bool = True):
 
     percentage = 0
     while True:
-        output = stdout.channel.recv(1024).decode('utf-8')
-        search = re.search(r'\d+.\d+', output)
+        output = stdout.channel.recv(1024).decode("utf-8")
+        search = re.search(r"\d+.\d+", output)
         last_percentage = percentage
         if search:
             TestRun.LOGGER.info(output)
